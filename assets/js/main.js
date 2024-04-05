@@ -34,7 +34,7 @@ function search (val = null){
 
 function getWeatherData(city){
     const apiKey = 'c781c6238645490d968171534240504';
-    const days = 5;
+    const days = 6;
     const country = 'US'; 
     city = capFirst(city)
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city},${country}&days=${days}&aqi=no&alerts=no`;
@@ -72,7 +72,9 @@ function updateContent(data){
         }
 
         // next 5 days cards
-        Object.values(data.forecast)[0].forEach(item =>{
+        Object.values(data.forecast)[0].forEach((item, i) =>{
+            // skip current day
+            if(i == 0) {return}
             const obj = {
                 'clas':'card',
                 'date':item.date,  
