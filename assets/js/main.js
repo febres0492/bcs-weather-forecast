@@ -45,7 +45,6 @@ function getWeatherData(city){
         throw new Error('Request failed.');
     })
     .then(data => {
-        console.log('api data',data);
         updateContent(data)
         localStorage.setItem('bcs-weather-data', JSON.stringify(data));
     })
