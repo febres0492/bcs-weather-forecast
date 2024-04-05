@@ -1,12 +1,6 @@
 :root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --info-color: #17a2b8;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
+    --color-1:hsla(213, 67%, 30%, 0.365);
+    --color-2:hsl(213, 67%, 40%);
 }
 
 * {
@@ -17,6 +11,30 @@
 
 body {
     min-height: 100vh;
+    background-color:#cee0ef;
+}
+
+/* scrollbar ----------------------------------------------------------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 /* global ----------------------------------------------------------- */
@@ -51,4 +69,52 @@ body {
 }
 .jcse {
     justify-content: space-evenly;
+}
+
+/* header ----------------------------------------------------------- */
+header {
+    background-color: var(--color-1);
+    color: var(--color-2);
+    padding: .5em;
+
+}
+
+/* searcg column ---------------------------------------------------------- */
+
+#searchBtn {
+    background-color: var(--color-2);
+    color: white;
+}
+
+.divider{
+    background-color: var(--color-1);
+    height: 2px;
+}
+
+input {
+    background-color: hsla(0, 0%, 0%, 0.1);
+}
+
+.li-btn {
+    background-color: var(--color-1);
+    color: var(--color-2);
+    font-weight: bold;
+}
+
+/* cards ----------------------------------------------------------------- */
+
+.box {
+    border: 3px solid var(--color-1);
+    border-radius: .5em;
+}
+
+.weather-card {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 20px;
+}
+
+.card {
+    min-width: fit-content;
+    background-color: var(--color-1);
 }

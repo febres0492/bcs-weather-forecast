@@ -39,17 +39,6 @@ function getWeatherData(city){
     city = capFirst(city)
     const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city},${country}&days=${days}&aqi=no&alerts=no`;
 
-    let data = localStorage.getItem('bcs-weather-data');
-
-    // ---------------------------------------------------------------
-    // to be removed
-    // if(data){
-    //     data = JSON.parse(data);
-    //     updateContent(data)
-    //     return
-    // }
-    // ---------------------------------------------------------------
-
     fetch(url)
     .then(response => {
         if (response.ok) { return response.json(); }
@@ -78,6 +67,7 @@ function updateContent(data){
         if(idx == 0){
             data.current.name = `${data.location.name} ${data.location.region}`;
             data.current.country = data.location.country;
+            data.current.clas = 'card overflow-hidden';
 
             updateCard(card, data.current)
             return
@@ -136,7 +126,7 @@ function updatingSearchHistory(value = null){
     // update search history
     S('#previous-res')[0].innerHTML = '';
     data.forEach(item=>{
-        const li = ` <li class="btn btn-sm border" value="${item}">${capFirst(item)}</li> `
+        const li = ` <li class="btn li-btn btn-sm border" value="${item}">${capFirst(item)}</li> `
         S('#previous-res')[0].innerHTML += li;
     })
 }

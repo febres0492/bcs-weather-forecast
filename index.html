@@ -11,7 +11,7 @@
     <!-- header -->
     <header>
         <div class="container-fluid">
-            <div class="row bg-secondary">
+            <div class="row">
                 <div class="col df">
                     <h2>Weather App</h2>
                 </div>
@@ -26,11 +26,11 @@
 
                 <!-- search column -->
                 <div class="col-12 col-sm-4 mb-3 mb-sm-0">
-                    <div class="d-flex  h-100 ch-maxw100 ais gap-2 flex-column border p-2 rounded">
+                    <div class="box d-flex  h-100 ch-maxw100 ais gap-2 flex-column p-2">
                         <h3>Search</h3>
-                        <input id="searchInput" class="rounded p-1 border bg-light" type="text" required>
-                        <button id="searchBtn" class="btn btn-sm btn-secondary">Search</button>
-                        <div class="divider border my-2"></div>
+                        <input id="searchInput" class="rounded p-1 border" type="text" required>
+                        <button id="searchBtn" class="btn btn-sm">Search</button>
+                        <div class="divider my-2"></div>
                         <div id="previous-res" class="df jcfs gap-2">
                             <!-- previous results go here -->
                         </div>
@@ -40,15 +40,17 @@
 
                 <!-- weather column -->
                 <div class="col-12 col-sm-8">
-                    <div class="weather-card border p-2 rounded mb-3">
-                        <!-- current weather data goes here  -->
-                        <h5>Current weather</h5>
+                    <div class="box p-2 mb-3">
+                        <h5>Today</h5>
+                        <div class="weather-card">
+                            <!-- current weather data goes here  -->
+                        </div>
                     </div>
 
                     <!-- forecast -->
-                    <div class="border p-2 rounded">
+                    <div class="box p-2">
                         <h5>5 days forecast</h5>
-                        <div class="weather-card df jcse">
+                        <div class="weather-card d-flex px-4 py-3">
                             <!-- farecast data goes here -->
                         </div>
                     </div>
