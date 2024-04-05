@@ -14,7 +14,7 @@ S('#searchBtn')[0].addEventListener('click', ()=>{
 // search when click on previous search history
 S("#previous-res")[0].addEventListener('click', (ev)=>{
     if(ev.target.tagName == 'LI'){
-        let value = ev.target.value;
+        let value = ev.target.attributes.value.value
         search(value)
     }
 })
