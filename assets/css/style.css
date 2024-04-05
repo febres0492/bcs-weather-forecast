@@ -39,3 +39,16 @@ body {
     align-items: stretch;
 }
 
+
+.jcfs {
+    justify-content: flex-start;
+}
+.jcsb {
+    justify-content: space-between;
+}
+.jcsa {
+    justify-content: space-around;
+}
+.jcse {
+    justify-content: space-evenly;
+}

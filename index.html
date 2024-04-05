@@ -25,25 +25,30 @@
             <div class="row pt-3">
 
                 <!-- search column -->
-                <div class="col-12 col-sm-4 mb-4">
-                    <div class="df ch-maxw100 ais gap-2 flex-column border p-2 rounded">
+                <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                    <div class="d-flex  h-100 ch-maxw100 ais gap-2 flex-column border p-2 rounded">
                         <h3>Search</h3>
-                        <input id="searchInput" class="rounded border bg-light" type="text">
-                        <button class="btn btn-secondary">Search</button>
-                        <div class="divider border my-2"> </div>
+                        <input id="searchInput" class="rounded p-1 border bg-light" type="text" required>
+                        <button id="searchBtn" class="btn btn-sm btn-secondary">Search</button>
+                        <div class="divider border my-2"></div>
+                        <div id="previous-res" class="df jcfs gap-2">
+                            <!-- previous results go here -->
+                        </div>
+                        <button id="deleteBtn" class="btn btn-sm btn-secondary">Delete History</button>
                     </div>
                 </div>
 
                 <!-- weather column -->
                 <div class="col-12 col-sm-8">
-                    <div class="border p-2 rounded mb-3">
-                        <h3>city</h3>
+                    <div class="weather-card border p-2 rounded mb-3">
+                        <!-- current weather data goes here  -->
+                        <h5>Current weather</h5>
                     </div>
 
                     <!-- forecast -->
                     <div class="border p-2 rounded">
                         <h5>5 days forecast</h5>
-                        <div class="border p-2 rounded">
+                        <div class="weather-card df jcse">
                             <!-- farecast data goes here -->
                         </div>
                     </div>
