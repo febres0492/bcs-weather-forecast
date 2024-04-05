@@ -22,9 +22,9 @@ S("#previous-res")[0].addEventListener('click', (ev)=>{
 // delete button click event
 S('#deleteBtn')[0].addEventListener('click', deleteSearchHistory)
 
-window.onload = function() {
-    search('Orlando');
-};
+search('Orlando');
+// window.onload = function() {
+// };
 
 function search (val = null){
     if(val.length == 0) {return}
@@ -39,7 +39,7 @@ function getWeatherData(city){
     const days = 5;
     const country = 'US'; 
     city = capFirst(city)
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city},${country}&days=${days}&aqi=no&alerts=no`;
+    const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city},${country}&days=${days}&aqi=no&alerts=no`;
 
     fetch(url)
     .then(response => {
