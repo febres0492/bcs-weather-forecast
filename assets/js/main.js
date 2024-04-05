@@ -56,10 +56,10 @@ function getWeatherData(city){
 }
 
 function updateContent(data){
-    console.log(data);
 
     [...S('.weather-card')].forEach((card, idx)=>{
 
+        // clear card content
         card.innerHTML = '';
 
         // current day card
@@ -68,13 +68,12 @@ function updateContent(data){
             data.current.name = `${data.location.name} ${data.location.region}`;
             data.current.country = data.location.country;
             data.current.clas = 'card overflow-hidden';
-
             updateCard(card, data.current)
             return
         }
 
         // next 5 days cards
-        Object.values(data.forecast)[0].forEach((item, idx)=>{
+        Object.values(data.forecast)[0].forEach(item =>{
             const obj = {
                 'clas':'card',
                 'date':item.date,  
@@ -112,6 +111,7 @@ function updateCard(card, data){
     card.innerHTML += cardTemplate;
 }
 
+// update search history
 function updatingSearchHistory(value = null){
 
     let data = JSON.parse(localStorage.getItem('bcs-weather-search')) || [];
@@ -131,16 +131,17 @@ function updatingSearchHistory(value = null){
     })
 }
 
+// delete search history
 function deleteSearchHistory(){
     localStorage.removeItem('bcs-weather-search');
     localStorage.removeItem('bcs-weather-data')
     S('#previous-res')[0].innerHTML = '';
 }
 
-
-
+// selector function
 function S(str){return document.querySelectorAll(str);}
 
+// capitalize first letter
 function capFirst(str){
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
