@@ -114,6 +114,13 @@ input {
     gap: 20px;
 }
 
+.fist-card img {
+    position:absolute;
+    height: 90%;
+    bottom: 0;
+    right: 0;
+}
+
 .card {
     min-width: fit-content;
     background-color: var(--color-1);
