@@ -22,7 +22,9 @@ S("#previous-res")[0].addEventListener('click', (ev)=>{
 // delete button click event
 S('#deleteBtn')[0].addEventListener('click', deleteSearchHistory)
 
-search('Orlando');
+window.onload = function() {
+    search('Orlando');
+};
 
 function search (val = null){
     if(val.length == 0) {return}
