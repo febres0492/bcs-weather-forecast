@@ -8,6 +8,49 @@
     <title>Weather App</title>
 </head>
 <body>
+    <!-- header -->
+    <header>
+        <div class="container-fluid">
+            <div class="row bg-secondary">
+                <div class="col df">
+                    <h2>Weather App</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- main content -->
+    <section>
+        <div class="container-fluid">
+            <div class="row pt-3">
+
+                <!-- search column -->
+                <div class="col-12 col-sm-4 mb-4">
+                    <div class="df ch-maxw100 ais gap-2 flex-column border p-2 rounded">
+                        <h3>Search</h3>
+                        <input id="searchInput" class="rounded border bg-light" type="text">
+                        <button class="btn btn-secondary">Search</button>
+                        <div class="divider border my-2"> </div>
+                    </div>
+                </div>
+
+                <!-- weather column -->
+                <div class="col-12 col-sm-8">
+                    <div class="border p-2 rounded mb-3">
+                        <h3>city</h3>
+                    </div>
+
+                    <!-- forecast -->
+                    <div class="border p-2 rounded">
+                        <h5>5 days forecast</h5>
+                        <div class="border p-2 rounded">
+                            <!-- farecast data goes here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
