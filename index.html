@@ -10,7 +10,7 @@
 <body>
     <!-- header -->
     <header>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col df">
                     <h2>Weather App</h2>
@@ -21,12 +21,12 @@
 
     <!-- main content -->
     <section>
-        <div class="container">
-            <div class="row pt-3">
+        <div class="container-fluid">
+            <div class="row py-3">
 
                 <!-- search column -->
-                <div class="col-12 col-sm-4 mb-3 mb-sm-0">
-                    <div class="box d-flex  h-100 ch-maxw100 ais gap-2 flex-column p-2">
+                <div class="col-12 col-sm-5 col-md-4 mb-3 mb-sm-0">
+                    <div id="searchColumn" class="box d-flex  h-100 ch-maxw100 ais gap-2 flex-column p-2">
                         <h3>Search</h3>
                         <input id="searchInput" class="rounded p-1 border" type="text" required>
                         <button id="searchBtn" class="btn btn-sm">Search</button>
@@ -35,11 +35,17 @@
                             <!-- previous results go here -->
                         </div>
                         <button id="deleteBtn" class="btn btn-sm btn-secondary">Delete History</button>
+                        <div class="divider my-2"></div>
+                        <h5>Popular Cities</h5>
+                        <div class="df fg jcfs">
+                            <!-- popular cities go here -->
+                            <div id="popular-cities-div" class="rounded p-1"></div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- weather column -->
-                <div class="col-12 col-sm-8 pb-4 p-md-0">
+                <div class="col-12 col-sm-7 col-md-8">
                     <div class="box p-2 mb-3">
                         <h5>Today</h5>
                         <div class="weather-card fist-card">

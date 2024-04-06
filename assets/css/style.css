@@ -18,7 +18,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
     height: 5px;
 }
 
@@ -44,6 +44,15 @@ body {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.fg {
+    flex: 1
+}
+
+.container-fluid {
+    max-width: 1200px;
+    padding: 0 1em;
 }
 
 .ch-maxw100 > *{
@@ -99,6 +108,21 @@ input {
     background-color: var(--color-1);
     color: var(--color-2);
     font-weight: bold;
+}
+
+#popular-cities-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    overflow-y: scroll;
+    height: 100;
+    max-height: 100px;
+    border: 1px solid var(--color-1);
+}
+@media screen and (min-width: 576px) {
+    #popular-cities-div {
+        max-height: 290px;
+    }
 }
 
 /* cards ----------------------------------------------------------------- */

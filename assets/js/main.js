@@ -12,9 +12,9 @@ S('#searchBtn')[0].addEventListener('click', ()=>{
 })
 
 // search when click on previous search history
-S("#previous-res")[0].addEventListener('click', (ev)=>{
+S("#searchColumn")[0].addEventListener('click', (ev)=>{
     if(ev.target.tagName == 'LI'){
-        let value = ev.target.attributes.value.value
+        let value = ev.target.innerText
         search(value)
     }
 })
@@ -23,6 +23,19 @@ S("#previous-res")[0].addEventListener('click', (ev)=>{
 S('#deleteBtn')[0].addEventListener('click', deleteSearchHistory)
 
 search('Orlando');
+
+const popularCities = [
+    'New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix', 'Philadelphia', 'San Antonio',
+    'San Diego', 'Dallas', 'San Jose', 'Austin', 'Jacksonville', 'Fort Worth', 'Columbus', 'Charlotte',
+    'Indianapolis', 'San Francisco', 'Seattle', 'Denver', 'Washington', 'Boston', 'El Paso', 
+    'Nashville', 'Detroit', 'Oklahoma City', 'Portland', 'Las Vegas', 'Memphis', 'Louisville', 
+    'Baltimore', 'Milwaukee', 'Albuquerque', 'Tucson', 'Fresno', 'Sacramento',
+]
+popularCities.forEach(city=>{
+    S('#popular-cities-div')[0].innerHTML += `
+        <li class="btn li-btn btn-sm border">${city}</li>
+    `
+})
 
 function search (val = null){
     if(val.length == 0) {return}
@@ -117,7 +130,7 @@ function updatingSearchHistory(value = null){
 
     let data = JSON.parse(localStorage.getItem('bcs-weather-search')) || [];
     if(value){
-        data.push({'value': value})
+        data.push({'value': value.toLowerCase()})
         localStorage.setItem('bcs-weather-search', JSON.stringify(data));
     }
 
@@ -127,7 +140,7 @@ function updatingSearchHistory(value = null){
     // update search history
     S('#previous-res')[0].innerHTML = '';
     data.forEach(item=>{
-        const li = ` <li class="btn li-btn btn-sm border" value="${item}">${capFirst(item)}</li> `
+        const li = `<li class="btn li-btn btn-sm border">${capFirst(item)}</li>`
         S('#previous-res')[0].innerHTML += li;
     })
 }
